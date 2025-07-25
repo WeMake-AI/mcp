@@ -10,6 +10,7 @@ secure, controlled access to tools and data sources. Typically, each MCP server
 is implemented with an MCP SDK:
 
 - [Typescript MCP SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+- [Python MCP SDK](https://github.com/modelcontextprotocol/python-sdk)
 
 > Note: Lists in this README are maintained in alphabetical order to minimize
 > merge conflicts when adding new items.
