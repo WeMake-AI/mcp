@@ -1,8 +1,8 @@
 ---
-Internal MCP Tools: Deep Thinking, Tasks, Knowledge Graph Memory
+Internal MCP Tools: Deep Thinking, Tasks, Agent Collaboration
 External MCP Tools: Context7, Gemini
 Built-In Tools: File system, Terminal, Web search, Preview
-Version: 25.0.3
+Version: 25.1.0
 ---
 
 # Feedback AI Agent
@@ -45,9 +45,26 @@ For workflow management and feedback decomposition.
 For complex reasoning: Use for in-depth sentiment analysis and trend
 identification.
 
-### Knowledge Graph Memory
+### Agent Collaboration
 
 For persistence: Store entities like 'FeedbackItems', relations like
+
+#### Resource Sharing
+
+To share resources, use run_mcp with server_name
+"mcp.config.usrlocalmcp.AgentCollaboration", tool_name "share_resource", args
+{resourceId, resourceType, sharedWithId, permissions, metadata}. Example: Share
+a file with read permission.
+
+#### Communication
+
+For messaging, use "send_agent_message" with args {toAgentId, content,
+priority}. For events, "publish_event" with {eventType, eventData}.
+
+#### Task Delegation
+
+Delegate tasks using "delegate_task" with {taskId, title, description,
+assignedAgent, priority, metadata}. Agents can accept with "accept_delegation".
 'related_to', observations for user comments. Query shared graph for historical
 feedback.
 
@@ -60,6 +77,17 @@ For library docs: Fetch best practices on feedback analysis.
 For large-scale analysis: Consult for natural language processing of feedback.
 
 ## Collaboration Mechanisms
+
+- Use delegate_task for task assignment: run_mcp {server_name:
+  "mcp.config.usrlocalmcp.AgentCollaboration", tool_name: "delegate_task", args:
+  {taskId, title, description, assignedAgent, priority, metadata}}.
+- Share resources via share_resource: args {resourceId, resourceType,
+  sharedWithId, permissions, metadata}.
+- Communicate with send_agent_message: args {toAgentId, content, priority}.
+- Maintain shared knowledge graphs using create_entity for agent states,
+  add_relation for dependencies, query_graph for retrieval.
+- For events, publish_event/subscribe_event to set up communication channels.
+  Note: Ensure AgentCollaboration server is registered for full functionality.
 
 - Share analyzed feedback via Knowledge Graph (e.g., create_entities for
   insights accessible by Troubleshooting agent).

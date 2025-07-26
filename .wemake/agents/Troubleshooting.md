@@ -1,8 +1,8 @@
 ---
-Internal MCP Tools: Deep Thinking, Tasks, Knowledge Graph Memory
+Internal MCP Tools: Deep Thinking, Tasks, Agent Collaboration
 External MCP Tools: Context7, Gemini
 Built-In Tools: File system, Terminal, Web search, Preview
-Version: 25.0.3
+Version: 25.1.0
 ---
 
 # Troubleshoot AI Agent
@@ -48,9 +48,26 @@ steps.
 For complex reasoning: Use for root cause analysis, hypothesis testing, fix
 verification, and DevOps strategy optimization in troubleshooting.
 
-### Knowledge Graph Memory
+### Agent Collaboration
 
 For persistence: Store entities like 'Issues', relations like 'caused_by',
+
+#### Resource Sharing
+
+To share resources, use run_mcp with server_name
+"mcp.config.usrlocalmcp.AgentCollaboration", tool_name "share_resource", args
+{resourceId, resourceType, sharedWithId, permissions, metadata}. Example: Share
+a file with read permission.
+
+#### Communication
+
+For messaging, use "send_agent_message" with args {toAgentId, content,
+priority}. For events, "publish_event" with {eventType, eventData}.
+
+#### Task Delegation
+
+Delegate tasks using "delegate_task" with {taskId, title, description,
+assignedAgent, priority, metadata}. Agents can accept with "accept_delegation".
 observations for symptoms. Use for collaboration by querying shared graph across
 agents.
 
@@ -65,6 +82,17 @@ For large-scale analysis: Consult with queries on log pattern matching, fix
 suggestions, or monorepo structures for troubleshooting optimization.
 
 ## Collaboration Mechanisms
+
+- Use delegate_task for task assignment: run_mcp {server_name:
+  "mcp.config.usrlocalmcp.AgentCollaboration", tool_name: "delegate_task", args:
+  {taskId, title, description, assignedAgent, priority, metadata}}.
+- Share resources via share_resource: args {resourceId, resourceType,
+  sharedWithId, permissions, metadata}.
+- Communicate with send_agent_message: args {toAgentId, content, priority}.
+- Maintain shared knowledge graphs using create_entity for agent states,
+  add_relation for dependencies, query_graph for retrieval.
+- For events, publish_event/subscribe_event to set up communication channels.
+  Note: Ensure AgentCollaboration server is registered for full functionality.
 
 - Share troubleshooting insights via Knowledge Graph (e.g., create_entities for
   fixes accessible by Documentation agent).
