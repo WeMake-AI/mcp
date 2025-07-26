@@ -1,6 +1,6 @@
 {
   "name": "@wemake-ai/mcp",
-  "version": "25.3.10",
+  "version": "25.4.0",
   "author": "WeMake (https://wemake.cx)",
   "devDependencies": {
     "@types/bun": "latest",
@@ -16,7 +16,7 @@
   "peerDependencies": {
     "typescript": "^5"
   },
-  "bugs": "https://github.com/WeMake-ai/mcp/issues",
+  "bugs": "https://github.com/WeMake-AI/mcp/issues",
   "description": "WeMake Model Context Protocol (MCP) servers",
   "homepage": "https://wemake.cx",
   "license": "BSL-1.1",
@@ -29,6 +29,8 @@
   "scripts": {
     "build-all": "bun run --filter='./src/*' build",
     "publish-all": "bun run --filter='./src/*' publish-now",
+    "agent-collaboration:build": "bun run --cwd='./src/agent-collaboration' build",
+    "agent-collaboration:publish": "bun run --cwd='./src/agent-collaboration' publish-now",
     "deep-thinking:build": "bun run --cwd='./src/deep-thinking' build",
     "deep-thinking:publish": "bun run --cwd='./src/deep-thinking' publish-now",
     "knowledge-graph-memory:build": "bun run --cwd='./src/knowledge-graph-memory' build",

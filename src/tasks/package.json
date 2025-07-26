@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "WeMake (https://wemake.cx)",
   "homepage": "https://wemake.cx",
-  "bugs": "https://github.com/WeMake-ai/mcp/issues",
+  "bugs": "https://github.com/WeMake-AI/mcp/issues",
   "type": "module",
   "exports": {
     ".": {
