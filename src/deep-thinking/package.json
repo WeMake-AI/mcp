@@ -2,7 +2,7 @@
   "name": "@wemake-ai/mcpserver-deep-thinking",
   "version": "1.0.6",
   "description": "Model Context Protocol (MCP) server for deep thinking and problem solving",
-  "license": "MIT",
+  "license": "BSL-1.1",
   "author": "WeMake (https://wemake.cx)",
   "homepage": "https://wemake.cx",
   "bugs": "https://github.com/WeMake-ai/mcp/issues",

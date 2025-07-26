@@ -1,6 +1,6 @@
 {
   "name": "@wemake-ai/mcp",
-  "version": "25.3.9",
+  "version": "25.3.15",
   "author": "WeMake (https://wemake.cx)",
   "devDependencies": {
     "@types/bun": "latest",
@@ -11,7 +11,9 @@
     "markdownlint": "^0.38.0",
     "prettier": "^3.6.2",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "nx": "21.3.7",
+    "@nx/eslint": "21.3.7"
   },
   "peerDependencies": {
     "typescript": "^5"
@@ -19,7 +21,7 @@
   "bugs": "https://github.com/WeMake-ai/mcp/issues",
   "description": "WeMake Model Context Protocol (MCP) servers",
   "homepage": "https://wemake.cx",
-  "license": "MIT",
+  "license": "BSL-1.1",
   "prettier": {
     "trailingComma": "none",
     "printWidth": 80,
@@ -35,9 +37,9 @@
     "knowledge-graph-memory:publish": "bun run --cwd='./src/knowledge-graph-memory' publish-now",
     "tasks:build": "bun run --cwd='./src/tasks' build",
     "tasks:publish": "bun run --cwd='./src/tasks' publish-now",
-    "format": "bunx prettier --write . && bun lint --fix",
-    "prettier": "bunx prettier --write .",
-    "lint": "bunx eslint . --ext .ts,.tsx",
+    "format": "prettier --write . && eslint . --ext .ts,.tsx --fix",
+    "prettier": "prettier .",
+    "lint": "eslint . --ext .ts,.tsx",
     "check": "tsc --noEmit",
     "test": "vitest",
     "test:watch": "vitest --watch",

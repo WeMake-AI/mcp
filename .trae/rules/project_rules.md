@@ -210,9 +210,8 @@ Add to each package's `package.json`:
 ```json
 "exports": {
   ".": {
-    "types": "./dist/index.d.ts",
-    "import": "./dist/index.mjs",
-    "require": "./dist/index.js",
+    "import": "./dist/index.js",
+    "default": "./dist/index.js",
     "bun": "./src/index.ts"
   }
 }

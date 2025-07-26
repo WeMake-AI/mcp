@@ -7,6 +7,14 @@ export default [
   { ignores: ["**/dist/**"] },
   js.configs.recommended,
   {
+    files: ["**/*.js"],
+    languageOptions: {
+      globals: {
+        ...globals.node
+      }
+    }
+  },
+  {
     files: ["**/*.ts", "**/*.tsx"],
     plugins: {
       "@typescript-eslint": typescriptEslint

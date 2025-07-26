@@ -2,7 +2,7 @@
   "name": "@wemake-ai/mcpserver-tasks",
   "version": "1.0.4",
   "description": "Model Context Protocol (MCP) server for Tasks",
-  "license": "MIT",
+  "license": "BSL-1.1",
   "author": "WeMake (https://wemake.cx)",
   "homepage": "https://wemake.cx",
   "bugs": "https://github.com/WeMake-ai/mcp/issues",

@@ -284,7 +284,7 @@ export class KnowledgeGraphManager {
 const server = new Server(
   {
     name: "knowledge-graph-memory-server",
-    version: "1.1.2"
+    version: "1.1.4"
   },
   {
     capabilities: {
@@ -335,7 +335,7 @@ const callToolHandler = async (request: {
 }) => {
   const memoryFilePath =
     process.env.KNOWLEDGE_GRAPH_MEMORY_FILE ||
-    path.join(__dirname, "knowledge.json");
+    path.join(__dirname, "knowledge-graph.json");
   const manager = new KnowledgeGraphManager(memoryFilePath);
   const { name, arguments: args } = request.params;
   if (!args) throw new Error("No arguments provided");
@@ -428,7 +428,34 @@ if (process.env.NODE_ENV !== "test" && !process.env.VITEST) {
 const toolSchemas = [
   {
     name: "create_entities",
-    description: "Create multiple new entities",
+    description: `Use create_entities to add multiple new entities to the knowledge graph.
+
+MANDATORY PARAMETERS:
+- entities (array): List of entity objects, each containing:
+  - name (string): Unique identifier for the entity (max 100 characters)
+  - entityType (string): Category of the entity (e.g., 'person', 'organization')
+  - observations (array of strings): Initial facts or notes about the entity
+
+EXECUTION PROTOCOL:
+
+1. VALIDATION
+   - Ensure all entities have unique names not existing in the graph
+   - Validate required fields and types for each entity
+   - Skip duplicates without error
+
+2. INTEGRATION
+   - Add valid entities to the graph
+   - Update persistent storage
+   - Maintain graph integrity
+
+3. USE CASES
+   - Initial population of graph with new concepts
+   - Batch addition of related entities
+   - Expanding knowledge base with verified information
+
+OUTPUT:
+- Array of successfully created entities
+- Empty array if all were duplicates or invalid`,
     inputSchema: {
       type: "object",
       properties: {
@@ -450,7 +477,33 @@ const toolSchemas = [
   },
   {
     name: "create_relations",
-    description: "Create multiple new relations",
+    description: `Use create_relations to establish multiple connections between entities.
+
+MANDATORY PARAMETERS:
+- relations (array): List of relation objects, each containing:
+  - from (string): Source entity name
+  - to (string): Target entity name
+  - relationType (string): Type of relationship (e.g., 'works_at', 'parent_of')
+
+EXECUTION PROTOCOL:
+
+1. VALIDATION
+   - Verify both from and to entities exist
+   - Ensure relation doesn't already exist
+   - Validate relationType is meaningful
+
+2. INTEGRATION
+   - Add valid relations to graph
+   - Maintain directed graph structure
+   - Update storage
+
+3. USE CASES
+   - Defining relationships in knowledge base
+   - Building complex entity networks
+   - Updating graph structure
+
+OUTPUT:
+- Array of successfully created relations`,
     inputSchema: {
       type: "object",
       properties: {
@@ -472,7 +525,33 @@ const toolSchemas = [
   },
   {
     name: "add_observations",
-    description: "Add observations to entities",
+    description: `Use add_observations to append new facts or notes to existing entities in the knowledge graph.
+
+MANDATORY PARAMETERS:
+- observations (array): List of observation objects, each containing:
+  - entityName (string): Name of the entity to update
+  - contents (array of strings): New observations to add
+
+EXECUTION PROTOCOL:
+
+1. VALIDATION
+   - Verify each entity exists in the graph
+   - Ensure observations are not duplicates
+   - Validate input types and structures
+
+2. INTEGRATION
+   - Append new observations to matching entities
+   - Update persistent storage
+   - Maintain data integrity
+
+3. USE CASES
+   - Updating entity information with new insights
+   - Recording evolving knowledge about entities
+   - Enhancing graph with additional details
+
+OUTPUT:
+- Array of objects with entityName and addedObservations
+- Skips non-existent entities`,
     inputSchema: {
       type: "object",
       properties: {
@@ -493,7 +572,27 @@ const toolSchemas = [
   },
   {
     name: "delete_entities",
-    description: "Delete entities",
+    description: `Use delete_entities to remove specified entities and their associated relations from the graph.
+
+MANDATORY PARAMETERS:
+- entityNames (array of strings): Names of entities to delete
+
+EXECUTION PROTOCOL:
+
+1. VALIDATION
+   - Confirm entities exist
+   - Identify associated relations
+
+2. DELETION
+   - Remove entities and linked relations
+   - Update storage
+
+3. USE CASES
+   - Cleaning obsolete data
+   - Correcting errors in graph
+
+OUTPUT:
+- Number of deleted entities`,
     inputSchema: {
       type: "object",
       properties: { entityNames: { type: "array", items: { type: "string" } } },
@@ -502,7 +601,28 @@ const toolSchemas = [
   },
   {
     name: "delete_observations",
-    description: "Delete observations",
+    description: `Use delete_observations to remove specific observations from entities.
+
+MANDATORY PARAMETERS:
+- deletions (array): List of deletion objects, each containing:
+  - entityName (string): Target entity
+  - observations (array of strings): Observations to remove
+
+EXECUTION PROTOCOL:
+
+1. VALIDATION
+   - Verify entity and observations exist
+
+2. DELETION
+   - Remove matching observations
+   - Update storage
+
+3. USE CASES
+   - Removing outdated information
+   - Correcting inaccurate data
+
+OUTPUT:
+- Confirmation message`,
     inputSchema: {
       type: "object",
       properties: {
@@ -523,7 +643,26 @@ const toolSchemas = [
   },
   {
     name: "delete_relations",
-    description: "Delete relations",
+    description: `Use delete_relations to remove specific relationships between entities.
+
+MANDATORY PARAMETERS:
+- relations (array): List of relation objects to delete, each with from, to, relationType
+
+EXECUTION PROTOCOL:
+
+1. VALIDATION
+   - Confirm relations exist
+
+2. DELETION
+   - Remove matching relations
+   - Update storage
+
+3. USE CASES
+   - Updating graph structure
+   - Removing invalid connections
+
+OUTPUT:
+- Confirmation message`,
     inputSchema: {
       type: "object",
       properties: {
@@ -545,12 +684,42 @@ const toolSchemas = [
   },
   {
     name: "read_graph",
-    description: "Read the entire graph",
+    description: `Use read_graph to retrieve the entire knowledge graph.
+
+PARAMETERS: None required
+
+EXECUTION PROTOCOL:
+
+1. RETRIEVAL
+   - Load complete graph from storage
+
+2. USE CASES
+   - Full graph inspection
+   - Backup or export
+
+OUTPUT:
+- Complete KnowledgeGraph object`,
     inputSchema: { type: "object", properties: {} }
   },
   {
     name: "search_nodes",
-    description: "Search for nodes",
+    description: `Use search_nodes to find entities and relations matching a query.
+
+MANDATORY PARAMETERS:
+- query (string): Search term
+
+EXECUTION PROTOCOL:
+
+1. SEARCH
+   - Filter entities by name, type, observations
+   - Include connected relations
+
+2. USE CASES
+   - Querying specific information
+   - Discovering related entities
+
+OUTPUT:
+- Filtered KnowledgeGraph`,
     inputSchema: {
       type: "object",
       properties: { query: { type: "string" } },
@@ -559,7 +728,23 @@ const toolSchemas = [
   },
   {
     name: "open_nodes",
-    description: "Open specific nodes",
+    description: `Use open_nodes to retrieve specific entities and their direct relations.
+
+MANDATORY PARAMETERS:
+- names (array of strings): Entity names to retrieve
+
+EXECUTION PROTOCOL:
+
+1. RETRIEVAL
+   - Fetch specified entities
+   - Include relations between them
+
+2. USE CASES
+   - Detailed view of select entities
+   - Analyzing subsets of graph
+
+OUTPUT:
+- Filtered KnowledgeGraph with requested nodes`,
     inputSchema: {
       type: "object",
       properties: { names: { type: "array", items: { type: "string" } } },

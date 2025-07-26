@@ -28,7 +28,7 @@ describe("Server Integration Tests", () => {
   let manager: KnowledgeGraphManager;
 
   beforeEach(() => {
-    manager = new KnowledgeGraphManager("/tmp/test-knowledge.json");
+    manager = new KnowledgeGraphManager("/tmp/test-knowledge-graph.json");
   });
 
   describe("Tool Handler Simulation", () => {
