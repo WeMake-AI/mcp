@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@types/json-schema": "^7.0.15",
-    "@types/node": "^20.11.0",
+    "@types/node": "^24.2.0",
     "shx": "^0.3.4",
     "typescript": "^5.3.3"
   }
