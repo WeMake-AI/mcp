@@ -12,7 +12,7 @@
     "prettier": "^3.6.2",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4",
-    "nx": "21.3.7",
+    "nx": "21.3.11",
     "@nx/eslint": "21.3.7"
   },
   "peerDependencies": {
