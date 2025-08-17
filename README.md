@@ -1,4 +1,4 @@
-# 🤖 WeMake AI: Enterprise MCP Server Ecosystem
+# 🌌 WeMake AI: Enterprise MCP Server Ecosystem
 
 > **AI-First Enterprise Solutions for the German Market**
 
@@ -15,7 +15,7 @@ while maintaining the highest standards of security, privacy, and regulatory com
 - **🇩🇪 German Market Focus**: Optimized for German enterprise and healthcare requirements
 - **⚡ Bun-First Development**: High-performance TypeScript with Bun runtime
 - **☁️ Cloudflare Workers**: Edge deployment with global scalability
-- **🤖 AI Agent Ready**: Autonomous systems with self-healing capabilities
+- **🌌 AI Agent Ready**: Autonomous systems with self-healing capabilities
 - **📊 Enterprise Monitoring**: Comprehensive observability and audit trails
 - **🔒 Security by Design**: Zero-trust architecture with enterprise-grade security
 
@@ -36,7 +36,7 @@ scalability.
 - **`@wemake-ai/mcp-healthcare-server`** - German healthcare standards (DiGA, ePA, TI)
 - **`@wemake-ai/mcp-audit-server`** - Enterprise audit logging and compliance reporting
 
-### 🤖 AI Agent Automation
+### 🌌 AI Agent Automation
 
 - **`@wemake-ai/mcp-agent-server`** - Autonomous AI agent orchestration
 - **`@wemake-ai/mcp-monitoring-server`** - Self-healing systems with predictive analytics
@@ -243,6 +243,6 @@ For enterprise licensing inquiries, contact: <licensing@wemake.cx>
 ---
 
 <div align="center">
-  <strong>Built with ❤️ by WeMake AI for the German Enterprise Market</strong><br>
+  <strong>Built with 💙 by WeMake AI for the German Enterprise Market</strong><br>
   <em>Empowering AI-First Organizations with Secure, Compliant, and Scalable Solutions</em>
 </div>
