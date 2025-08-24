@@ -37,7 +37,7 @@
     "deploy:enterprise": "bun run --filter='./src/*' deploy:enterprise"
   },
   "devDependencies": {
-    "@nx/eslint": "21.3.7",
+    "@nx/eslint": "21.4.1",
     "@tsconfig/bun": "^1.0.8",
     "@types/bun": "^1.2.20",
     "@typescript-eslint/eslint-plugin": "^8.40.0",
