@@ -47,7 +47,7 @@ jobs:
       packages: ${{ steps.find-changed-packages.outputs.packages }}
       has-changes: ${{ steps.find-changed-packages.outputs.has-changes }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0 # Fetch full history for change detection
 
@@ -96,7 +96,7 @@ jobs:
     name: Release ${{ matrix.package }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
