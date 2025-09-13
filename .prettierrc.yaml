@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://json.schemastore.org/prettierrc
+# Prettier configuration
+# https://prettier.io/docs/en/configuration.html
+
+trailingComma: none
+printWidth: 120
+proseWrap: always
+endOfLine: lf
+overrides:
+  - files: |
+      "*.yaml"
+      "*.yml"
+    options:
+      proseWrap: never
+  - files: ".husky/*"
+    options:
+      plugins:
+        - "prettier-plugin-sh"
+      parser: sh
+  - files: "*.mdc"
+    options:
+      parser: markdown
+      proseWrap: never

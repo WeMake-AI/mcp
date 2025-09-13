@@ -1,0 +1,8 @@
+extends: "@commitlint/config-conventional"
+formatter: "@commitlint/format"
+parserPreset: "conventional-changelog-conventionalcommits"
+rules:
+  subject-max-length: [2, "always", 120]
+  header-max-length: [2, "always", 120]
+  # Example: limit scopes to workspace projects
+  # scope-enum: [2, "always", ["core", "docs", "infra", "cli", "api", "web"]]

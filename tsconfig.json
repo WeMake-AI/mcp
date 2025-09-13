@@ -30,5 +30,6 @@
     "exactOptionalPropertyTypes": true,
     "noImplicitReturns": true,
     "noUncheckedIndexedAccess": false
-  }
+  },
+  "include": ["scripts/*.ts", "test-setup.ts", "test.config.ts"]
 }

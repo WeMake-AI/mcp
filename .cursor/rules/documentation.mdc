@@ -1,0 +1,27 @@
+---
+globs: *.md,*.mdc
+alwaysApply: false
+---
+
+# MCP Documentation Standards
+
+All MCP server READMEs must follow the standardized template at the top of each package README:
+
+- Include sections: Title, Executive Summary, Overview and Purpose, Capabilities (Tools), Installation and Setup, Configuration, Usage, System Prompt Template.
+- Provide a concrete Example section that mirrors the template with real values.
+- Describe each tool with: description, input schema (JSON), output description, and error cases.
+- List environment variables with default values and example configuration.
+- Include security notes: least privilege, schema validation, HITL, audit logging, GDPR.
+- Keep instructions Bun-first (bunx, Bun.serve, bun:test). No Node/npm/yarn.
+- Ensure READMEs are concise, scannable, and copy-paste friendly for clients.
+
+Compliance checklist to include in PR reviews:
+
+- [ ] Template sections present and complete
+- [ ] Tool schemas accurate and validated
+- [ ] Env vars documented with defaults
+- [ ] Security notes included
+- [ ] Example config tested with bunx
+- [ ] Links to changelog and license
+- [ ] No prohibited tooling references
+- [ ] Follows WeMake tone: clear, direct, plain language

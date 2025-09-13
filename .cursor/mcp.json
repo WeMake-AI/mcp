@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "Nx": {
+      "command": "bunx",
+      "args": ["nx-mcp@latest"]
+    }
+  }
+}

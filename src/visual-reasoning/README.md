@@ -8,20 +8,20 @@ operations through ASCII visualization and mathematical computation.
 
 ### Core Concepts
 
-**Visual Element Management**
+#### Visual Element Management
 
 - Support for geometric primitives: points, lines, rectangles, circles, polygons, and text
 - Coordinate-based positioning with properties like dimensions, colors, and metadata
 - Canvas-based coordinate system with configurable dimensions and scaling
 
-**Spatial Reasoning Framework**
+#### Spatial Reasoning Framework
 
 - Distance calculations and proximity analysis between visual elements
 - Overlap detection and containment relationships
 - Alignment analysis for layout optimization
 - Multi-step geometric transformations (translate, scale, rotate)
 
-**Visual Analysis Capabilities**
+#### Visual Analysis Capabilities
 
 - ASCII diagram generation for spatial visualization
 - Coordinate-based mathematical analysis

@@ -1,0 +1,21 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+
+# Core Guidelines
+
+- **Bun-First Development**: EXCLUSIVELY use Bun for all operations: `bun install`, `bun run`, `bun test`, `bun build`, and `Bun.serve()` for servers. PROHIBITED: Node.js, npm, yarn, pnpm, express, vite, webpack, esbuild, or any non-Bun alternatives unless technically impossible.
+
+- **Bun Built-in APIs**: MANDATORY use of Bun's native APIs: `Bun.serve()` for HTTP/WebSocket servers, `bun:sqlite` for SQLite, `Bun.redis` for Redis, `Bun.sql` for PostgreSQL, `Bun.file` for file operations, `Bun.$` for shell commands, and `Bun.password` for secure hashing. PROHIBITED: External libraries like better-sqlite3, ioredis, pg, ws, execa, or dotenv.
+
+- **Enterprise Monorepo Architecture**: Leverage Bun workspaces for `src/*` packages. Implement automated builds, tests, and deployment via root package.json. ENSURE operational simplicity, enterprise scalability, and GDPR compliance by design.
+
+- **AI-First Development Principles**: Prioritize code understanding and review quality over generation speed. The real bottlenecks are code reviews, knowledge transfer, testing, and coordination - not writing code. Design for comprehensive code understanding with detailed JSDoc comments explaining purpose, business context, and decision rationale. Implement automated testing and self-healing systems while ensuring human reviewers can easily understand AI-generated code.
+
+- **Enterprise Testing Standards**: Use Bun's native test runner exclusively with `bun test` execution. MANDATORY 90%+ coverage for lines, functions, branches, and statements. Place tests in `tests/` folders using `functionName.test.ts` naming. Configure test environment via `bunfig.toml` for monorepo projects. Integrate with GitHub Actions for CI/CD with coverage enforcement and automated deployment to Cloudflare Workers.
+
+- **Modern Frontend Architecture**: Use HTML imports with `Bun.serve()` for SSR/SPA hybrid approach. Import .tsx/.jsx/.js and .css files directly in HTML with Bun's native bundling. Support React, TypeScript, and Tailwind CSS. Enable HMR and comprehensive error logging in development.
+
+- **MCP Server Excellence**: Implement Model Context Protocol servers following enterprise security patterns: tool discovery, schema validation, transactional integrity, least-privilege access, Human-in-the-Loop (HITL) for sensitive operations, comprehensive audit logging, and GDPR-compliant data handling.

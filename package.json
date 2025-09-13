@@ -17,8 +17,9 @@
   ],
   "private": true,
   "engines": {
-    "bun": ">=1.2.0",
-    "node": ">=20.0.0"
+    "node": "24.5.0",
+    "npm": "please-use-bun",
+    "bun": ">=1.2.0"
   },
   "packageManager": "bun@1.2.0",
   "scripts": {
@@ -27,59 +28,64 @@
     "watch": "bun run --filter='./src/*' watch",
     "publish-all": "bun run --filter='./src/*' publish",
     "link-all": "bun link --workspaces",
-    "format": "prettier --write . && eslint . --ext .ts,.tsx --fix",
+    "lint": "bun lint:markdown && bun lint:prettier && bun lint:eslint",
+    "lint:markdown": "markdownlint-cli2 \"**/*.{md,mdx,mdc}\" \"!node_modules\"",
+    "lint:prettier": "prettier --check .",
+    "lint:eslint": "eslint . --ext .ts,.tsx",
+    "commitlint": "commitlint",
+    "format": "prettier --write . && markdownlint-cli2 --fix \"**/*.{md,mdx,mdc}\" \"!node_modules\" && eslint . --ext .ts,.tsx --fix",
     "prettier": "prettier --check .",
-    "lint": "eslint . --ext .ts,.tsx",
     "check": "tsc --noEmit",
-    "cleanup": "find . -name 'node_modules' -type d -exec rm -rf {} + 2>/dev/null || true && find . -name 'dist' -type d -exec rm -rf {} + 2>/dev/null || true"
+    "clean": "find . -name 'node_modules' -type d -exec rm -rf {} + 2>/dev/null || true && find . -name 'dist' -type d -exec rm -rf {} + 2>/dev/null || true",
+    "test": "bun test",
+    "test:unit": "bun test --name-pattern='*.unit.*'",
+    "test:integration": "bun test --name-pattern='*.integration.*'",
+    "test:e2e": "bun test --name-pattern='*.e2e.*'",
+    "test:performance": "bun run test:perf",
+    "test:security": "bun run security:scan",
+    "test:coverage": "bun test --coverage",
+    "test:ci": "bun test --reporter=junit --reporter-outfile=${JUNIT_OUTFILE:-test-results.xml} --coverage",
+    "test:watch": "bun test --watch",
+    "test:debug": "bun test --inspect",
+    "test:perf": "bun run benchmark && bun run load-test",
+    "security:scan": "bun run audit && bun run snyk-test && bun run license-check",
+    "audit": "bun audit --audit-level moderate",
+    "license-check": "license-checker --onlyAllow 'Unlicense;MIT;Apache-2.0;BSD-3-Clause;0BSD;BSD-2-Clause;BSD*;ISC;Python-2.0;CC-BY-4.0;CC-BY-3.0;CC0-1.0'",
+    "benchmark": "bun run scripts/benchmark.ts",
+    "load-test": "bun run scripts/load-test.ts",
+    "test:self-heal": "bun run scripts/self-heal.ts",
+    "test:report": "bun run scripts/generate-report.ts"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.17.4",
-    "@wemake.cx/analogical-reasoning": "*",
-    "@wemake.cx/bias-detection": "*",
-    "@wemake.cx/constraint-solver": "*",
-    "@wemake.cx/decision-framework": "*",
-    "@wemake.cx/ethical-reasoning": "*",
-    "@wemake.cx/focus-group": "*",
-    "@wemake.cx/goal-tracker": "*",
-    "@wemake.cx/memory": "*",
-    "@wemake.cx/metacognitive-monitoring": "*",
-    "@wemake.cx/multimodal-synthesizer": "*",
-    "@wemake.cx/narrative-planner": "*",
-    "@wemake.cx/scientific-method": "*",
-    "@wemake.cx/sequential-thinking": "*",
-    "@wemake.cx/structured-argumentation": "*",
-    "@wemake.cx/transaction-manager": "*",
-    "@wemake.cx/visual-reasoning": "*"
+    "@modelcontextprotocol/sdk": "1.18.0"
   },
   "devDependencies": {
-    "@nx/eslint": "21.4.1",
-    "@tsconfig/bun": "^1.0.8",
+    "0x": "6.0.0",
+    "@commitlint/cli": "19.8.1",
+    "@commitlint/config-conventional": "19.8.1",
+    "@commitlint/format": "19.8.1",
+    "@github/markdownlint-github": "0.8.0",
+    "@nx/eslint": "21.5.2",
+    "@tsconfig/bun": "1.0.8",
     "@types/bun": "1.2.21",
-    "@typescript-eslint/eslint-plugin": "^8.40.0",
-    "@typescript-eslint/parser": "^8.40.0",
-    "eslint": "^9.34.0",
-    "markdownlint": "^0.38.0",
-    "nx": "21.4.1",
-    "prettier": "^3.6.2",
-    "typescript": "^5.9.2",
-    "vite-tsconfig-paths": "^5.1.4"
+    "@typescript-eslint/eslint-plugin": "8.43.0",
+    "@typescript-eslint/parser": "8.43.0",
+    "autocannon": "8.0.0",
+    "clinic": "13.0.0",
+    "eslint": "9.35.0",
+    "license-checker": "25.0.1",
+    "lint-staged": "16.1.6",
+    "markdownlint": "0.38.0",
+    "markdownlint-cli2": "0.18.1",
+    "markdownlint-cli2-formatter-pretty": "0.0.8",
+    "nx": "21.5.2",
+    "prettier": "3.6.2",
+    "prettier-plugin-sh": "0.18.0",
+    "typescript": "5.9.2",
+    "vite-tsconfig-paths": "5.1.4"
   },
-  "prettier": {
-    "trailingComma": "none",
-    "printWidth": 120,
-    "proseWrap": "always",
-    "endOfLine": "lf",
-    "overrides": [
-      {
-        "files": [
-          ".github/workflows/*.yml"
-        ],
-        "options": {
-          "proseWrap": "never",
-          "objectWrap": "collapse"
-        }
-      }
-    ]
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css,scss,md,mdx,mdc,sh}": "prettier --write --cache",
+    "*.{md,mdx,mdc}": "markdownlint-cli2 --fix"
   }
 }

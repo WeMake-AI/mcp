@@ -1,0 +1,73 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/DavidAnson/markdownlint-cli2/refs/heads/main/schema/markdownlint-cli2-config-schema.json
+
+config:
+  # Override: disable fenced-code-language rule
+  extends: "markdownlint/style/prettier"
+
+  # Line length
+  line-length:
+    line_length: 120
+    heading_line_length: 120
+    code_blocks: false
+    tables: false
+
+  # Headings
+  heading-increment: true
+  no-duplicate-heading: true
+  no-missing-space-atx: true
+  no-multiple-space-atx: true
+  no-trailing-punctuation: true
+  heading-style:
+    style: "atx"
+
+  # Lists
+  ul-style:
+    style: "dash"
+  ol-prefix:
+    style: "ordered"
+  list-indent: true
+  no-bare-urls: true
+
+  # Code
+  code-block-style:
+    style: "fenced"
+  no-inline-html: false
+  fenced-code-language: false
+
+  # Links and images
+  no-dead-links: true
+  image-alt-text: true
+  no-html: false
+
+  # Emphasis
+  emphasis-style:
+    style: "consistent"
+  strong-style:
+    style: "consistent"
+
+  # Whitespace
+  no-trailing-spaces: true
+  no-multiple-blanks: true
+  no-hard-tabs: true
+
+  # Content
+  no-empty-links: true
+  no-duplicate-heading-in-section: true
+
+# .gitignore
+gitignore: true
+
+# Output formatting
+outputFormatters:
+  - - markdownlint-cli2-formatter-pretty
+    - appendLink: true
+
+# Ignore patterns
+ignores:
+  - "node_modules/**"
+  - "dist/**"
+  - "build/**"
+  - ".wrangler/**"
+  - "coverage/**"
+  - ".cursor/rules/*.mdc"
+  - ".nx/**"

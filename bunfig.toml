@@ -1,33 +1,24 @@
 # Bun Configuration for WeMake MCP Enterprise Monorepo
 
-# Install configuration
 [install]
-# Use exact versions for enterprise stability
 exact = true
-
-# Registry configuration
 registry = "https://registry.npmjs.org"
 
-[install.scopes]
+[install.scopes]  
+wemake.cx = { token = "$NPM_TOKEN", url = "https://registry.npmjs.org" }  
 
-# Registry with token
-wemake.cx = { token = "$npm_token", url = "https://registry.npmjs.org" }
-
-# Development server configuration
 [dev]
-# Enable hot module replacement
 hmr = true
-
-# Development server port
 port = 3000
 
-# Build configuration
 [build]
-# Target ESNext for modern runtime compatibility
 target = "ESNext"
-
-# Enable source maps for debugging
 sourcemap = true
-
-# Minify for production builds
 minify = true
+
+[test]
+root = "."
+coverage = true
+preload = ["./test-setup.ts"]
+coverageThreshold = { line = 0.7, function = 0.8, statement = 0.9 }
+coveragePathIgnorePatterns = ["node_modules/**", "dist/**", "coverage/**"]

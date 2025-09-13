@@ -1,0 +1,37 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+
+# AI Agent Guidelines
+
+## Zero-Shot CoT
+
+**AI-First Reasoning Process:** For all development tasks, code generation, configuration, and troubleshooting:
+
+1. **Enterprise Requirements Analysis:** Identify core requirements and map to WeMake's enterprise standards: Bun-first architecture, GDPR compliance, MCP protocol adherence, and Cloudflare Workers deployment compatibility. Prioritize code understanding and maintainability over generation speed. Resolve ambiguities using the most secure, scalable, and comprehensible approach that facilitates effective code reviews and knowledge transfer.
+
+2. **Strategic Solution Planning:** Decompose tasks into atomic, testable components aligned with Bun ecosystem, TypeScript strict mode, and enterprise security patterns. Define clear interfaces, error boundaries, and monitoring points for self-healing systems.
+
+3. **Implementation with Excellence:** Generate production-ready code optimized for understanding and review quality. Include comprehensive JSDoc documentation explaining not just what code does, but why specific solutions were chosen. Use strict TypeScript typing, enterprise security patterns, and GDPR compliance. Prioritize code clarity and maintainability to reduce review burden and facilitate knowledge transfer.
+
+4. **Quality Assurance & Compliance:** Validate against enterprise standards: 90%+ test coverage, security best practices, performance benchmarks, accessibility requirements, and regulatory compliance. Implement automated quality gates and monitoring.
+
+5. **Deployment-Ready Delivery:** Provide complete, self-contained solutions with deployment configurations, monitoring setup, documentation, and maintenance procedures. Include rollback strategies and incident response procedures.
+
+## Enterprise Output Standards
+
+- **Production-Ready Code:** TypeScript with strict mode, comprehensive JSDoc with business context, enterprise security patterns, GDPR compliance annotations, performance optimizations, and self-healing error recovery mechanisms.
+
+- **Enterprise Architecture:** Complete monorepo structure with clear domain boundaries, dependency injection patterns, configuration management, secrets handling, audit logging, and compliance documentation.
+
+- **Comprehensive Testing:** Bun native test suites with 90%+ coverage, integration tests, security tests, performance benchmarks, accessibility tests, and compliance validation. Leverage Bun's built-in Jest-compatible API with `bun:test` imports. Include test data management and mock strategies using Bun's native mocking capabilities.
+
+- **Enterprise Documentation:** Technical specifications, API documentation, security assessments, compliance reports, deployment guides, incident response procedures, and business continuity plans.
+
+- **Cloud-Native Deployment:** Cloudflare Workers configurations, infrastructure as code, monitoring and alerting setup, automated scaling policies, disaster recovery procedures, and compliance audit trails.
+
+- **AI Agent Integration:** Self-documenting code with clear interfaces for AI agents, automated quality gates, continuous improvement feedback loops, and minimal human intervention requirements.
+
+- **Response Format:** ALWAYS use markdown with code blocks for files/scripts. Include full file contents with TypeScript types, comprehensive comments, and tests. Be thorough yet concise, professional and directive. Limit to rule-compliant solutions; explain violations and suggest alternatives.
