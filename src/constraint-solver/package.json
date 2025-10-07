@@ -46,7 +46,7 @@
     "expr-eval": "^2.0.2"
   },
   "devDependencies": {
-    "@types/node": "^22",
+    "@types/node": "^24",
     "typescript": "^5.3.3"
   }
 }
