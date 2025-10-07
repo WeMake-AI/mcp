@@ -55,7 +55,7 @@
     "@wemake.cx/visual-reasoning": "*"
   },
   "devDependencies": {
-    "@nx/eslint": "21.4.1",
+    "@nx/eslint": "21.6.3",
     "@tsconfig/bun": "^1.0.8",
     "@types/bun": "1.2.21",
     "@typescript-eslint/eslint-plugin": "^8.40.0",
