@@ -40,7 +40,7 @@
     },
     "src/analogical-reasoning": {
       "name": "@wemake.cx/analogical-reasoning",
-      "version": "0.3.4",
+      "version": "0.3.5",
       "bin": {
         "mcp-server-analogical-reasoning": "dist/index.js",
       },
@@ -51,7 +51,7 @@
         "zod-to-json-schema": "^3.23.5",
       },
       "devDependencies": {
-        "@types/node": "^22",
+        "@types/node": "^24",
         "typescript": "^5.3.3",
       },
     },
@@ -65,7 +65,7 @@
         "@modelcontextprotocol/sdk": "^1.17.4",
       },
       "devDependencies": {
-        "@types/node": "^22",
+        "@types/node": "^24",
         "typescript": "^5.3.3",
       },
     },
@@ -80,7 +80,7 @@
         "chalk": "^5.3.0",
       },
       "devDependencies": {
-        "@types/node": "^22",
+        "@types/node": "^24",
         "typescript": "^5.3.3",
       },
     },
@@ -95,7 +95,7 @@
         "expr-eval": "^2.0.2",
       },
       "devDependencies": {
-        "@types/node": "^22",
+        "@types/node": "^24",
         "typescript": "^5.3.3",
       },
     },
@@ -110,7 +110,7 @@
         "chalk": "^5.3.0",
       },
       "devDependencies": {
-        "@types/node": "^22",
+        "@types/node": "^24",
         "typescript": "^5.3.3",
       },
     },
@@ -125,7 +125,7 @@
         "chalk": "^5.3.0",
       },
       "devDependencies": {
-        "@types/node": "^22",
+        "@types/node": "^24",
         "typescript": "^5.3.3",
       },
     },
@@ -140,7 +140,7 @@
         "chalk": "^5.3.0",
       },
       "devDependencies": {
-        "@types/node": "^22",
+        "@types/node": "^24",
         "typescript": "^5.3.3",
       },
     },
@@ -154,7 +154,7 @@
         "@modelcontextprotocol/sdk": "^1.17.4",
       },
       "devDependencies": {
-        "@types/node": "^22",
+        "@types/node": "^24",
         "typescript": "^5.3.3",
       },
     },
@@ -168,13 +168,13 @@
         "@modelcontextprotocol/sdk": "^1.17.4",
       },
       "devDependencies": {
-        "@types/node": "^22",
+        "@types/node": "^24",
         "typescript": "^5.3.3",
       },
     },
     "src/metacognitive-monitoring": {
       "name": "@wemake.cx/metacognitive-monitoring",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "bin": {
         "mcp-server-metacognitive-monitoring": "dist/index.js",
       },
@@ -183,7 +183,7 @@
         "chalk": "^5.3.0",
       },
       "devDependencies": {
-        "@types/node": "^22",
+        "@types/node": "^24",
         "typescript": "^5.3.3",
       },
     },
@@ -197,7 +197,7 @@
         "@modelcontextprotocol/sdk": "^1.17.4",
       },
       "devDependencies": {
-        "@types/node": "^22",
+        "@types/node": "^24",
         "typescript": "^5.3.3",
       },
     },
@@ -211,7 +211,7 @@
         "@modelcontextprotocol/sdk": "^1.17.4",
       },
       "devDependencies": {
-        "@types/node": "^22",
+        "@types/node": "^24",
         "typescript": "^5.3.3",
       },
     },
@@ -226,7 +226,7 @@
         "chalk": "^5.3.0",
       },
       "devDependencies": {
-        "@types/node": "^22",
+        "@types/node": "^24",
         "typescript": "^5.3.3",
       },
     },
@@ -241,7 +241,7 @@
         "chalk": "^5.3.0",
       },
       "devDependencies": {
-        "@types/node": "^22",
+        "@types/node": "^24",
         "typescript": "^5.3.3",
       },
     },
@@ -256,7 +256,7 @@
         "chalk": "^5.3.0",
       },
       "devDependencies": {
-        "@types/node": "^22",
+        "@types/node": "^24",
         "typescript": "^5.3.3",
       },
     },
@@ -274,7 +274,7 @@
         "zod": "^3.23.8",
       },
       "devDependencies": {
-        "@types/node": "^22",
+        "@types/node": "^24",
         "typescript": "^5.3.3",
       },
     },
@@ -289,7 +289,7 @@
         "chalk": "^5.3.0",
       },
       "devDependencies": {
-        "@types/node": "^22",
+        "@types/node": "^24",
         "typescript": "^5.3.3",
       },
     },
@@ -595,7 +595,7 @@
 
     "@types/ms": ["@types/ms@2.1.0", "", {}, "sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA=="],
 
-    "@types/node": ["@types/node@22.18.10", "", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-anNG/V/Efn/YZY4pRzbACnKxNKoBng2VTFydVu8RRs5hQjikP8CQfaeAV59VFSCzKNp90mXiVXW2QzV56rwMrg=="],
+    "@types/node": ["@types/node@24.7.2", "", { "dependencies": { "undici-types": "~7.14.0" } }, "sha512-/NbVmcGTP+lj5oa4yiYxxeBjRivKQ5Ns1eSZeB99ExsEQ6rX5XYU1Zy/gGxY/ilqtD4Etx9mKyrPxZRetiahhA=="],
 
     "@types/parse-json": ["@types/parse-json@4.0.2", "", {}, "sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw=="],
 
@@ -1299,7 +1299,7 @@
 
     "typescript": ["typescript@5.9.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
 
-    "undici-types": ["undici-types@6.21.0", "", {}, "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ=="],
+    "undici-types": ["undici-types@7.14.0", "", {}, "sha512-QQiYxHuyZ9gQUIrmPo3IA+hUl4KYk8uSA7cHrcKd/l3p1OTpZcM0Tbp9x7FAtXdAYhlasd60ncPpgu6ihG6TOA=="],
 
     "unicode-canonical-property-names-ecmascript": ["unicode-canonical-property-names-ecmascript@2.0.1", "", {}, "sha512-dA8WbNeb2a6oQzAQ55YlT5vQAWGV9WXOsi3SskE3bcCdM0P4SDd+24zS/OCacdRq5BkdsRj9q3Pg6YyQoxIGqg=="],
 
@@ -1387,6 +1387,8 @@
 
     "body-parser/iconv-lite": ["iconv-lite@0.6.3", "", { "dependencies": { "safer-buffer": ">= 2.1.2 < 3.0.0" } }, "sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw=="],
 
+    "bun-types/@types/node": ["@types/node@22.18.10", "", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-anNG/V/Efn/YZY4pRzbACnKxNKoBng2VTFydVu8RRs5hQjikP8CQfaeAV59VFSCzKNp90mXiVXW2QzV56rwMrg=="],
+
     "cosmiconfig/yaml": ["yaml@1.10.2", "", {}, "sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg=="],
 
     "eslint/chalk": ["chalk@4.1.2", "", { "dependencies": { "ansi-styles": "^4.1.0", "supports-color": "^7.1.0" } }, "sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA=="],
@@ -1432,6 +1434,8 @@
     "@typescript-eslint/typescript-estree/minimatch/brace-expansion": ["brace-expansion@2.0.2", "", { "dependencies": { "balanced-match": "^1.0.0" } }, "sha512-Jt0vHyM+jmUBqojB7E1NIYadt0vI0Qxjxd2TErW94wDz+E2LAm5vKMXXwg6ZZBTHPuUlDgQHKXvjGBdfcF1ZDQ=="],
 
     "@yarnpkg/parsers/js-yaml/argparse": ["argparse@1.0.10", "", { "dependencies": { "sprintf-js": "~1.0.2" } }, "sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg=="],
+
+    "bun-types/@types/node/undici-types": ["undici-types@6.21.0", "", {}, "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ=="],
 
     "filelist/minimatch/brace-expansion": ["brace-expansion@2.0.2", "", { "dependencies": { "balanced-match": "^1.0.0" } }, "sha512-Jt0vHyM+jmUBqojB7E1NIYadt0vI0Qxjxd2TErW94wDz+E2LAm5vKMXXwg6ZZBTHPuUlDgQHKXvjGBdfcF1ZDQ=="],
 

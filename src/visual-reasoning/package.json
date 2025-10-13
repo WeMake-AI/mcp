@@ -43,7 +43,7 @@
     "chalk": "^5.3.0"
   },
   "devDependencies": {
-    "@types/node": "^22",
+    "@types/node": "^24",
     "typescript": "^5.3.3"
   }
 }
