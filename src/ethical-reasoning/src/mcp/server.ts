@@ -7,7 +7,7 @@ import { ETHICAL_REASONING_TOOL } from "./tools.js";
  * Creates and configures the MCP server instance.
  */
 export function createServer(): Server {
-  const server = new Server({ name: "ethical-reasoning-server", version: "0.4.0" }, { capabilities: { tools: {} } });
+  const server = new Server({ name: "ethical-reasoning-server", version: "0.4.6" }, { capabilities: { tools: {} } });
   const api = new EthicalReasoningAPI();
 
   server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: [ETHICAL_REASONING_TOOL] }));

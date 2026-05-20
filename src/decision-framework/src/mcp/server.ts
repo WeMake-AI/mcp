@@ -13,7 +13,7 @@ export class DecisionFrameworkMCPServer {
     this.server = new Server(
       {
         name: "decision-framework-server",
-        version: "0.4.0"
+        version: "0.4.6"
       },
       {
         capabilities: {

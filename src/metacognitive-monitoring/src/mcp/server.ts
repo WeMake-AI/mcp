@@ -14,7 +14,7 @@ import { METACOGNITIVE_MONITORING_TOOL } from "./tools.js";
 /**
  * Factory function that creates and configures a metacognitive monitoring MCP server instance.
  *
- * This function initializes a Server with the name "metacognitive-monitoring-server" and version "0.4.5",
+ * This function initializes a Server with the name "metacognitive-monitoring-server" and version "0.4.6",
  * registers the metacognitive monitoring tool, and sets up request handlers for listing available
  * tools and processing metacognitive monitoring requests. The server facilitates systematic
  * self-monitoring of knowledge and reasoning quality across various domains and reasoning tasks.
@@ -25,7 +25,7 @@ export function createServer(): Server {
   const server = new Server(
     {
       name: "metacognitive-monitoring-server",
-      version: "0.4.5"
+      version: "0.4.6"
     },
     {
       capabilities: {

@@ -1,6 +1,6 @@
 {
   "name": "@wemake.cx/multimodal-synthesizer",
-  "version": "0.4.0",
+  "version": "0.4.6",
   "description": "MCP server for combining text and image descriptions",
   "license": "MIT",
   "main": "./dist/index.js",

@@ -1,6 +1,6 @@
 {
   "name": "@wemake.cx/bias-detection",
-  "version": "0.4.0",
+  "version": "0.4.6",
   "description": "MCP server for simple bias detection in text",
   "license": "MIT",
   "main": "./dist/index.js",
