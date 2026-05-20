@@ -9,7 +9,7 @@ interface GoalInput {
 }
 
 export function createServer(): Server {
-  const version = process.env.PKG_VERSION ?? "0.4.0";
+  const version = process.env.PKG_VERSION ?? "0.4.6";
   const server = new Server({ name: "goal-tracker-server", version }, { capabilities: { tools: {} } });
   const tracker = new GoalTracker();
 

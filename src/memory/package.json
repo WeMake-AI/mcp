@@ -1,6 +1,6 @@
 {
   "name": "@wemake.cx/memory",
-  "version": "0.4.0",
+  "version": "0.4.6",
   "description": "MCP server for enabling memory for AI Agents through a knowledge graph",
   "license": "MIT",
   "main": "./dist/index.js",

@@ -7,7 +7,7 @@ import { ThoughtData } from "../core/types.js";
 /**
  * Factory function that creates and configures a sequential thinking MCP server instance.
  *
- * This function initializes a Server with the name "sequential-thinking-server" and version "0.4.0",
+ * This function initializes a Server with the name "sequential-thinking-server" and version "0.4.6",
  * registers the SEQUENTIAL_THINKING_TOOL, and sets up request handlers.
  *
  * @returns A configured Server instance ready for MCP communication
@@ -16,7 +16,7 @@ export default function createServer(): Server {
   const server = new Server(
     {
       name: "sequential-thinking-server",
-      version: "0.4.0"
+      version: "0.4.6"
     },
     {
       capabilities: {

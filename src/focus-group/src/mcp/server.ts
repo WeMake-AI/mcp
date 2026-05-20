@@ -10,7 +10,7 @@ export function createServer(): Server {
   const server = new Server(
     {
       name: "focus-group-server",
-      version: "0.4.0"
+      version: "0.4.6"
     },
     {
       capabilities: {

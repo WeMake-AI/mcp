@@ -6,7 +6,7 @@ import { MultimodalInput } from "../core/types.js";
 
 export function createServer(): Server {
   const server = new Server(
-    { name: "multimodal-synthesizer-server", version: "0.4.0" },
+    { name: "multimodal-synthesizer-server", version: "0.4.6" },
     { capabilities: { tools: {} } }
   );
   const synthesizer = new MultimodalSynthesizer();

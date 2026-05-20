@@ -21,7 +21,7 @@ export function createServer(): Server {
   const server = new Server(
     {
       name: "memory-server",
-      version: "0.4.0"
+      version: "0.4.6"
     },
     {
       capabilities: {

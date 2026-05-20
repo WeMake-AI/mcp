@@ -1,6 +1,6 @@
 {
   "name": "@wemake.cx/focus-group",
-  "version": "0.4.0",
+  "version": "0.4.6",
   "description": "MCP server for LLM focus groups to analyze and critique other MCP servers",
   "license": "MIT",
   "main": "./dist/index.js",

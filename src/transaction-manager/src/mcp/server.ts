@@ -80,7 +80,7 @@ export async function handleTransactionCallback(args: TxnRequestArgs): Promise<C
 export function createServer(): McpServer {
   const mcpServer = new McpServer({
     name: "transaction-manager",
-    version: "0.4.0"
+    version: "0.4.6"
   });
 
   // Register the single tool

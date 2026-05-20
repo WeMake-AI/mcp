@@ -9,7 +9,7 @@ import { BiasDetectionInput } from "../core/types.js";
  * Creates and configures the MCP server.
  */
 export function createServer(): Server {
-  const server = new Server({ name: "bias-detection-server", version: "0.4.0" }, { capabilities: { tools: {} } });
+  const server = new Server({ name: "bias-detection-server", version: "0.4.6" }, { capabilities: { tools: {} } });
 
   const client = new BiasDetectionClient();
 
