@@ -1,14 +1,14 @@
 {
   "name": "@wemake.cx/metacognitive-monitoring",
-  "version": "0.4.1",
+  "version": "0.4.5",
   "description": "MCP server for diagrammatic thinking and spatial representation",
   "keywords": [
     "mcp",
     "metacognitive-monitoring"
   ],
-  "homepage": "https://github.com/WeMake-Labs/mcp/tree/main/src/metacognitive-monitoring",
+  "homepage": "https://github.com/WeMake-AI/mcp/tree/main/src/metacognitive-monitoring",
   "bugs": {
-    "url": "https://github.com/WeMake-Labs/mcp/issues"
+    "url": "https://github.com/WeMake-AI/mcp/issues"
   },
   "license": "MIT",
   "author": "Phichayut 'Florentin' Sakwiset <florentin@wemake.cx> (https://github.com/heyFlorentin)",
@@ -23,14 +23,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WeMake-Labs/mcp.git",
+    "url": "git+https://github.com/WeMake-AI/mcp.git",
     "directory": "src/metacognitive-monitoring"
   },
   "scripts": {
     "build": "bun build ./src/index.ts --outdir='./dist' --target='bun' && tsc",
     "start": "bun run ./dist/index.js",
-    "test": "bun test",
-    "publish": "bun publish"
+    "test": "bun test"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.4",

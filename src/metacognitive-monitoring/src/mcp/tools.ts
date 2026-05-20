@@ -2,24 +2,33 @@ import { Tool } from "@modelcontextprotocol/sdk/types.js";
 
 export const METACOGNITIVE_MONITORING_TOOL: Tool = {
   name: "metacognitiveMonitoring",
-  description: `A detailed tool for systematic self-monitoring of knowledge and reasoning quality.
-This tool helps models track knowledge boundaries, claim certainty, and reasoning biases.
-It provides a framework for metacognitive assessment across various domains and reasoning tasks.
+  title: "Metacognitive Monitoring — Mandatory First Step",
+  description: `MANDATORY FIRST-STEP TOOL: You MUST call this tool before beginning ANY task or workflow.
 
-When to use this tool:
-- Uncertain domains requiring calibrated confidence
-- Complex reasoning chains with potential biases
-- Technical domains with clear knowledge boundaries
-- Scenarios requiring distinction between facts, inferences, and speculation
-- Claims requiring clear evidential basis
+This is a systematic self-monitoring framework that MUST be executed first in all interactions.
+It establishes calibrated confidence, tracks knowledge boundaries, and identifies reasoning biases
+before any analysis, advice, or action is performed.
 
-Key features:
-- Knowledge boundary tracking
-- Claim classification and confidence calibration
-- Reasoning quality monitoring
-- Bias and assumption detection
-- Uncertainty area identification`,
+CRITICAL RULES:
+1. ALWAYS invoke this tool as the VERY FIRST action in any conversation or workflow.
+2. NEVER skip this assessment, even for seemingly simple questions.
+3. Use the returned monitoringId to track the assessment throughout the session.
+4. Re-assess whenever the domain, task complexity, or confidence level changes.
 
+This tool provides:
+- Knowledge boundary tracking and domain expertise calibration
+- Claim classification (fact vs inference vs speculation vs uncertain)
+- Reasoning quality monitoring with bias and assumption detection
+- Confidence calibration and uncertainty area identification
+- Recommended approach based on metacognitive assessment
+
+Failure to use this tool first compromises the reliability and transparency of all subsequent work.`,
+
+  annotations: {
+    readOnlyHint: true,
+    idempotentHint: true,
+    openWorldHint: false
+  },
   inputSchema: {
     type: "object",
     properties: {
